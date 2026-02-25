@@ -24,8 +24,40 @@ VALUES  ("Notebook", "Prata", "2026-01-25", "Asus", 2000, 3900.00, "Computadores
         ("Camisa Polo", "branca", "2020-01-25", "Prada", 2000, 900.00, "Vestuário", "Camisa Polo Prada, Branca"),
         ("Mochila", "Azul", "2026-01-25", "Brit", 2000, 150.00, "Acessório", "Mochila Brit, Azul");
         
-SELECT * FROM tb_produtos WHERE preco > 500.00;
+SELECT  nome,
+		cor,
+        DATE_FORMAT(lancamento, '%d/%m/%Y') AS Data_lancamento,
+        marca,
+        CONCAT('R$ ', FORMAT(preco, 2, 'pt_BR')) AS Preco,
+        categoria,
+        descricao 
+FROM tb_produtos;
+	
+SELECT  nome,
+		cor,
+        DATE_FORMAT(lancamento, '%d/%m/%Y') AS Data_lancamento,
+        marca,
+        CONCAT('R$ ', FORMAT(preco, 2, 'pt_BR')) AS Preco,
+        categoria,
+        descricao 
+FROM tb_produtos WHERE preco > 500.00;
 
-SELECT * FROM tb_produtos WHERE preco < 500.00;
+SELECT  nome,
+		cor,
+        DATE_FORMAT(lancamento, '%d/%m/%Y') AS Data_lancamento,
+        marca,
+        CONCAT('R$ ', FORMAT(preco, 2, 'pt_BR')) AS Preco,
+        categoria,
+        descricao 
+FROM tb_produtos WHERE preco < 500.00;
+
+SELECT  nome,
+		cor,
+        DATE_FORMAT(lancamento, '%d/%m/%Y') AS Data_lancamento,
+        marca,
+        CONCAT('R$ ', FORMAT(preco, 2, 'pt_BR')) AS Preco,
+        UPPER(categoria),
+        descricao 
+FROM tb_produtos WHERE categoria = "eletrodomestico";
 
 UPDATE tb_produtos SET marca = "Polo" WHERE id = 7;

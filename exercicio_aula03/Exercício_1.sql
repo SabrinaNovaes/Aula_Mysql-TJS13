@@ -17,8 +17,8 @@ VALUES  ("Coco Channel", "Desenvolvedora Fullstack", 4500.00, "TI"),
         ("Stefan Salvatore", "Suporte Tecnico", 1900.00, "Atendimento"),
         ("Matt Donavan", "Segurança", 2000.00, "Segurança");
         
-SELECT * FROM tb_colaboradores WHERE salario > 2000.00;
+SELECT nome, cargo, CONCAT('R$ ', FORMAT(salario, 2, 'pt_BR')) AS Salario FROM tb_colaboradores WHERE salario > 2000.00;
 
-SELECT * FROM tb_colaboradores WHERE salario < 2000.00;
+SELECT  nome, cargo, CONCAT('R$ ', FORMAT(salario, 2, 'pt_BR')) AS Salario FROM tb_colaboradores WHERE salario < 2000.00;
 
 UPDATE tb_colaboradores SET salario = 1600.00 WHERE id = 5;
